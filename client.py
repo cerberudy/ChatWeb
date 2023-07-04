@@ -1,7 +1,10 @@
 import socket
 import threading
+import colorama
+from colorama import Fore, Back, Style
 
-print
+colorama.init()
+print(Fore.RED)
 print(" ██████╗██╗  ██╗ █████╗ ████████╗██╗    ██╗███████╗██████╗ ")
 print("██╔════╝██║  ██║██╔══██╗╚══██╔══╝██║    ██║██╔════╝██╔══██╗")
 print("██║     ███████║███████║   ██║   ██║ █╗ ██║█████╗  ██████╔╝")
@@ -14,7 +17,7 @@ nickname = input("Kullanıcı Girin: ")
 
 #client.connect Enter the active tunnel service ip and port in the section
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('0.tcp.eu.ngrok.io', 12712))
+client.connect(('7.tcp.eu.ngrok.io', 17890))
 def receive():
     while True:
         try:

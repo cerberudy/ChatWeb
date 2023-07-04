@@ -1,13 +1,19 @@
 import socket
 import time
 import threading
+import colorama 
+from colorama import Fore, Back, Style
 
+colorama.init()
+print(Fore.RED)
 print("Bağlantı kurulduğunda sohbet başlayacaktır...")
 time.sleep(1)
 print("Chat will start when users connect... ")
 time.sleep(1)
+print(Fore.YELLOW)
 print("...")
 time.sleep(2)
+print(Fore.RED)
 print("Bağlantı kuruluyor...#")
 time.sleep(1)
 print("Establishing connection...#")
@@ -48,6 +54,7 @@ def receive():
     while True:
          
         client, address = server.accept()
+        print(Fore.YELLOW)
         print("Bağlantı kuruldu {}".format(str(address)))
 
          
@@ -56,7 +63,7 @@ def receive():
         nicknames.append(nickname)
         clients.append(client)
 
-         
+        print(Fore.BLUE) 
         print("Kullanıcı {}".format(nickname))
         broadcast("{} joined!".format(nickname).encode("utf-8"))
         client.send('Connected to server!'.encode("utf-8"))
